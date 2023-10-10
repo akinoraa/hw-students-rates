@@ -2,7 +2,7 @@
 using namespace std;
 
 /// <summary>
-/// 
+/// A class representing a date and time.
 /// </summary>
 class DateTime
 {
@@ -12,9 +12,9 @@ class DateTime
 
 public:
     /// <summary>
-    /// method to set day of birth
+    /// Set the day of the DateTime object.
     /// </summary>
-    /// <param name="day"></param>
+    /// <param name="day">The day to set.</param>
     void SetDay(int day)
     {
         if (day > 0 && day <= 31) 
@@ -78,6 +78,10 @@ public:
         return year;
     }
 
+    /// <summary>
+    /// Default constructor for DateTime, sets the date to 23/3/2005.
+    /// </summary>
+
     DateTime() : DateTime(23, 3, 2005) {}
 
     DateTime(int day, int month) : DateTime(day, month, 2004) {}
@@ -89,14 +93,20 @@ public:
         SetYear(year);
     }
 
+    /// <summary>
+    /// Print the date in the format "day.month.year".
+    /// </summary>
+
     void Print() const
     {
         cout << "Date: " << day << "." << month << "." << year << endl;
     }
 };
 
-//////////////////////////////////////////////////////
-
+/// <summary>
+/// A class representing a student.
+/// </summary>
+/// 
 class Student
 {
     string name;
@@ -119,6 +129,10 @@ class Student
 
 public:
 
+    /// <summary>
+    /// Default constructor for Student, sets default values.
+    /// </summary>
+
     Student():Student("Max","Smith", "Antonovych", "Bunina", "0978463746", { 9, 10, 2000 }, {1, 9, 2022}) {}
 
     Student(string name, string surname):Student("Max", "Smith", "Antonovych", "Bunina", "0978463746", { 9, 10, 2000 }, { 1, 9, 2022 }) {}
@@ -134,13 +148,6 @@ public:
         SetStudyStart({ 9, 10, 2023 });
     }
 
-    // TO DO: constructors overloading !!!
-
-    // TO DO: make copy c-tor
-
-    /// <summary>
-    /// 
-    /// </summary>
     ~Student()
     {
         if (hometask_rates != nullptr)
@@ -161,14 +168,17 @@ public:
     }
 
     /// <summary>
-    /// 
+    /// Set the name of the student.
     /// </summary>
-    /// <param name="name"></param>
+    /// <param name="name">The name to set.</param>
     void SetName(string name)
     {
         this->name = name;
     }
-
+    /// <summary>
+    /// Get the name of the student.
+    /// </summary>
+    /// <param name="name">The name to set.</param>
     string GetName() const
     {
         return name;
@@ -181,23 +191,33 @@ private:
     }
 
 public:
+    /// <summary>
+    /// Set the birthday of the student.
+    /// </summary>
+    /// <param name="birthday">The name to set.</param>
     DateTime GetBirthday() const
     {
         return birthday;
     }
-
+    /// <summary>
+    /// Set the study_start of the student.
+    /// </summary>
+    /// <param name="study_start">The name to set.</param>
     void SetStudyStart(const DateTime& study_start)
     {
         this->study_start = study_start;
     }
-
+    /// <summary>
+    /// Get the study_start for the student.
+    /// </summary>
+    /// <param name="study_start">The name to set.</param>
     DateTime GetStudyStart() const
     {
         return study_start;
     }
 
     /// <summary>
-    /// à method that allows you to change a student's last name
+    /// Ð° method that allows you to change a student's last name
     /// </summary>
     /// <param name="surname">some new value for student surname</param>
     void SetSurname(string surname)
@@ -206,35 +226,50 @@ public:
     }
 
     /// <summary>
-    /// 
+    /// Get the surname for the student.
     /// </summary>
-    /// <returns></returns>
+    /// <param name="surname">The name to set.</param>
     string GetSurname() const
     {
         return surname;
     }
 
-
+    /// <summary>
+    /// Set the patronymic of the student.
+    /// </summary>
+    /// <param name="patronymic">The name to set.</param>
     void SetPatronymic(string patronymic)
     {
         this->patronymic = patronymic;
     }
-
+    /// <summary>
+    /// Get the patronymic for the student.
+    /// </summary>
+    /// <param name="patronymic">The name to set.</param>
     string GetPatronymic() const
     {
         return patronymic;
     }
-
+    /// <summary>
+    /// Set the adress of the student.
+    /// </summary>
+    /// <param name="adress">The name to set.</param>
     void SetAdress(string adress)
     {
         this->adress = adress;
     }
-
+    /// <summary>
+    /// Get the adress for the student.
+    /// </summary>
+    /// <param name="adress">The name to set.</param>
     string GetAdress() const
     {
         return adress;
     }
-
+    /// <summary>
+    /// Set the phone_number of the student.
+    /// </summary>
+    /// <param name="phone_number">The name to set.</param>
     void SetPhoneNumber(string phone_number)
     {
         if (phone_number.length() > 11 && phone_number.length() < 9)
@@ -245,7 +280,10 @@ public:
         else
             this->phone_number = phone_number;
     }
-
+    /// <summary>
+    /// Get the phone_number for the student.
+    /// </summary>
+    /// <param name="phone_number">The name to set.</param>
     string GetPhoneNumber() const
     {
         return phone_number;
